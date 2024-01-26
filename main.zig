@@ -119,9 +119,7 @@ fn assign_position(row: *u8, column: *u8, token: *u8, space: *[3][3]u8, p1: []u8
 
     if ((digit < 1) or (digit > 9)) {
         print("Invalid!", .{});
-    }
-
-    if (token.* == 'X' and space[row.*][column.*] != 'X' and space[row.*][column.*] != '0') {
+    } else if (token.* == 'X' and space[row.*][column.*] != 'X' and space[row.*][column.*] != '0') {
         space[row.*][column.*] = 'X';
         token.* = '0';
     } else if (token.* == '0' and space[row.*][column.*] != 'X' and space[row.*][column.*] != '0') {
